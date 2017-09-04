@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuly.ssm.dao.PhoneDao">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="queryByMid" resultType="Phone">
+		<!-- 具体的sql -->
+		select 
+			* 
+		from 
+			phone 
+		where
+			mid = #{mid}
+	</select>
+	
+	<delete id="deletePhoneByPhone">
+		DELETE FROM 
+		phone 
+		WHERE 
+		phone = #{phone}
+		AND 
+		mid = #{mid}
+	</delete>
+
+</mapper>
